@@ -1,4 +1,5 @@
 import { Inter_100Thin, useFonts } from '@expo-google-fonts/inter';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import {
@@ -16,9 +17,14 @@ import { ImageBackground } from 'react-native';
 import InputComponent from '../../components/InputComponent';
 import LogoText from '../../components/LogoText';
 import { THEMES } from '../../utils/Themes';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { StackRoutesProps } from '../../routes/stack.routes';
+import { useNavigation } from '@react-navigation/native';
+
+type LoginProps = StackNavigationProp<StackRoutesProps, 'Login'>;
 
 export default function LoginScreen() {
+	const navigator = useNavigation<LoginProps>();
 	let [fontsLoaded] = useFonts({
 		Inter_100Thin,
 	});
@@ -62,6 +68,7 @@ export default function LoginScreen() {
 									<InputComponent placeholder='Email' />
 									<InputComponent placeholder='Password' type='password' />
 									<Button
+										onTouchStart={() => navigator.navigate('Feed')}
 										backgroundColor={'black'}
 										fontFamily={'Inter_100Thin'}
 										color={'red'}
