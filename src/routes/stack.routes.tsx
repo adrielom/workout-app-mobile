@@ -7,7 +7,6 @@ import LoginScreen from '../screens/Login';
 
 export type StackRoutesProps = {
 	Login: undefined;
-	Home: undefined;
 	Feed: undefined;
 };
 const Stack = createNativeStackNavigator();
@@ -29,15 +28,6 @@ const StackRoutes: React.FC = () => {
 				component={FeedScreen}
 				options={{
 					headerShown: false,
-					statusBarTranslucent: true,
-					statusBarColor: 'transparent',
-				}}
-			/>
-			<Stack.Screen
-				name='Home'
-				component={HomeScreen}
-				options={{
-					// headerShown: false,
 					statusBarTranslucent: true,
 					statusBarColor: 'transparent',
 				}}

@@ -7,9 +7,8 @@ import TabsRoutes from '../../routes/tabs.routes';
 
 const FeedScreen = () => {
   return (
-    <View>
     <TabsRoutes /> 
-    </View>
+
   );
 }
 

@@ -7,12 +7,11 @@ const InputComponent = ({ ...rest }: IInputProps) => {
 	return (
 		<Input
 			outlineStyle={'none'}
-			outlineColor={'transparent'}
+			outlineColor={THEMES.colors.white}
 			backgroundColor={THEMES.colors.grey}
-			placeholderTextColor={'white'}
+			placeholderTextColor={THEMES.colors.white}
 			fontSize={'xl'}
-			color={'white'}
-			focusOutlineColor={'white'}
+			color={THEMES.colors.white}
 			borderRadius={12}
 			fontWeight={'normal'}
 			fontFamily={'Inter_100Thin'}
