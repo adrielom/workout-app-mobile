@@ -1,9 +1,9 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Center, Text, View } from 'native-base';
 import { House, PlusCircle, User } from 'phosphor-react-native';
 import HomeScreen from '../screens/Home';
 import { THEMES } from '../utils/Themes';
-import { Box, theme, View, Text, Center } from 'native-base';
 
 // import { Container } from './styles';
 const Tabs = createBottomTabNavigator();
@@ -28,19 +28,19 @@ function BottomDotIndicator({ color, focused, title }: any) {
 const TabsRoutes: React.FC = () => {
 	return (
 		<Tabs.Navigator
+			initialRouteName='Home'
 			screenOptions={{
 				tabBarActiveTintColor: 'white',
 				tabBarLabelPosition: 'below-icon',
 				headerShown: false,
+				headerShadowVisible: true,
+				tabBarHideOnKeyboard: true,
 				tabBarStyle: {
 					height: 60,
 					paddingTop: 5,
 					paddingBottom: 5,
 					backgroundColor: 'white',
 				},
-				// tabBarIcon: ({ size, color }) => (
-				// 	<Foundation name='home' size={24} color={themes.COLORS.WHITE} />
-				// ),
 			}}>
 			<Tabs.Screen
 				name='Add'

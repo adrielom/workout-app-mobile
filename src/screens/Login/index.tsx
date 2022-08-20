@@ -75,14 +75,14 @@ export default function LoginScreen() {
 										rounded={'50'}
 										_text={{
 											fontWeight: 'bold',
-											fontSize: 20,
+											fontSize: THEMES.size.searchBarFontSize,
 										}}>
 										Log in
 									</Button>
 									<View position={'relative'}>
 										<Divider
 											thickness={1}
-											backgroundColor={THEMES.colors.grey}
+											backgroundColor={THEMES.colors.lightGrey}
 											opacity={'0.35'}
 											my='2'
 										/>
@@ -94,11 +94,15 @@ export default function LoginScreen() {
 										rounded={'50'}
 										_text={{
 											fontWeight: 'bold',
-											fontSize: 20,
+											fontSize: THEMES.size.searchBarFontSize,
 										}}>
 										<HStack>
 											<Flex direction='row'>
-												<FontAwesome name='google' size={20} color={'white'} />
+												<FontAwesome
+													name='google'
+													size={THEMES.size.searchBarFontSize}
+													color={'white'}
+												/>
 												<Divider
 													opacity={'0.5'}
 													mx={10}

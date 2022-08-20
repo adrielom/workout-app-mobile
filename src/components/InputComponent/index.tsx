@@ -8,7 +8,7 @@ const InputComponent = ({ ...rest }: IInputProps) => {
 		<Input
 			outlineStyle={'none'}
 			outlineColor={THEMES.colors.white}
-			backgroundColor={THEMES.colors.grey}
+			backgroundColor={THEMES.colors.lightGrey}
 			placeholderTextColor={THEMES.colors.white}
 			fontSize={'xl'}
 			color={THEMES.colors.white}

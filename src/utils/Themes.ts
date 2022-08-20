@@ -9,10 +9,12 @@ export const THEMES = {
     size: {
         bottomTabIconSize: 32,
         bottomTabLabelSize: 10,
+        searchBarFontSize: 20
     },
     colors: {
         red: '#D32F2F',
-        grey: '#d9d9d9',
+        lightGrey: '#d9d9d9',
+        darkGrey: '#a9a9a9',
         white: 'white',
         black: 'black'
     }
