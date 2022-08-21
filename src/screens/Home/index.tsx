@@ -8,12 +8,18 @@ import {
 	StatusBar,
 	Text,
 	FlatList,
+	ScrollView,
 } from 'native-base';
 import { SafeAreaView, NativeModules, Platform } from 'react-native';
 
 import Searchbar from '../../components/Searchbar';
 import { THEMES } from '../../utils/Themes';
-import ExerciseCard from '../../components/ExerciseCard';
+import ExerciseCard, {
+	CARD_HEIGHT,
+	ExerciseCardProps,
+} from '../../components/ExerciseCard';
+import CardsList from '../../components/CardsList';
+import { PlaceholderInfo } from '../../utils/PlaceholderInfo';
 
 const { StatusBarManager } = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
@@ -50,11 +56,11 @@ const HomeScreen: React.FC = () => {
 							height: '100%',
 							width: '100%',
 						}}
-						renderItem={({ item }): any => {
+						renderItem={({ item, index }): any => {
 							return (
 								<Badge
 									px={THEMES.spacing.xm}
-									ml={THEMES.spacing.xm}
+									ml={index !== 0 ? THEMES.spacing.xm : 0}
 									maxHeight={'100'}
 									variant={'solid'}
 									backgroundColor={item.bgCol}
@@ -64,17 +70,7 @@ const HomeScreen: React.FC = () => {
 							);
 						}}
 					/>
-					<Center>
-						<ExerciseCard
-							imageSource='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-							badges={[]}
-							numberOfExercises={2}
-							reps={3}
-							sets={2}
-							time={4}
-							title={'heeey'}
-						/>
-					</Center>
+					<CardsList title='My Exercises' exercisesList={PlaceholderInfo} />
 				</Column>
 			</SafeAreaView>
 		</Box>

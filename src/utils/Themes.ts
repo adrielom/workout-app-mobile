@@ -9,7 +9,9 @@ export const THEMES = {
     size: {
         bottomTabIconSize: 32,
         bottomTabLabelSize: 10,
-        searchBarFontSize: 20
+        searchBarFontSize: 20,
+        exerciseCardIconSize: 12,
+        cardListTitleSize: 24
     },
     colors: {
         red: '#D32F2F',
