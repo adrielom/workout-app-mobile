@@ -1,4 +1,6 @@
-export interface Badge {
+import { IBadgeProps } from "native-base";
+
+export interface IBadge extends IBadgeProps {
     title: string,
     color: string
 }

@@ -1,6 +1,9 @@
 import { Inter_500Medium, useFonts } from '@expo-google-fonts/inter';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { Box, FlatList, IBoxProps, Text } from 'native-base';
 import React from 'react';
+import { StackRoutesProps } from '../../routes/stack.routes';
 import { THEMES } from '../../utils/Themes';
 import ExerciseCard, { CARD_HEIGHT, ExerciseCardProps } from '../ExerciseCard';
 
@@ -8,8 +11,10 @@ interface Props extends IBoxProps {
 	exercisesList: Array<ExerciseCardProps>;
 	title: string;
 }
+type CardListProps = StackNavigationProp<StackRoutesProps, 'Exercise'>;
 
 const CardsList: React.FC<Props> = ({ title, exercisesList }) => {
+	const navigation = useNavigation<CardListProps>();
 	const [fontsLoaded] = useFonts({
 		Inter_500Medium,
 	});
@@ -26,12 +31,11 @@ const CardsList: React.FC<Props> = ({ title, exercisesList }) => {
 				{title}
 			</Text>
 			<FlatList<ExerciseCardProps>
-				scrollEnabled={true}
+				// scrollEnabled={true}
 				data={exercisesList}
 				contentContainerStyle={{
 					justifyContent: 'space-around',
-					height: 'auto',
-					paddingBottom: CARD_HEIGHT / 0.75,
+					paddingBottom: CARD_HEIGHT / 0.45,
 				}}
 				renderItem={({ index, item }) => {
 					return (
@@ -45,6 +49,7 @@ const CardsList: React.FC<Props> = ({ title, exercisesList }) => {
 							key={item.imageSource + Date.now().toString()}
 							time={item.time}
 							title={item.title}
+							onTouchStart={() => navigation.navigate('Exercise')}
 						/>
 					);
 				}}

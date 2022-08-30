@@ -20,22 +20,25 @@ import ExerciseCard, {
 } from '../../components/ExerciseCard';
 import CardsList from '../../components/CardsList';
 import { PlaceholderInfo } from '../../utils/PlaceholderInfo';
+import BadgesList from '../../components/BadgesList';
+import { IBadge } from '../../interfaces/Badge';
 
 const { StatusBarManager } = NativeModules;
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
+export const STATUSBAR_HEIGHT =
+	Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
 const HomeScreen: React.FC = () => {
 	const FILTERS_LIST = [
 		{
 			title: 'Filter 1',
-			bgCol: 'black',
+			color: 'black',
 		},
 		{
 			title: 'Filter 2',
-			bgCol: 'grey',
 			color: THEMES.colors.lightGrey,
 		},
-	];
+	] as Array<IBadge>;
+
 	return (
 		<Box>
 			<StatusBar translucent barStyle={'dark-content'} />
@@ -45,31 +48,8 @@ const HomeScreen: React.FC = () => {
 				}}>
 				<Column padding={'8'}>
 					<Searchbar />
-					<FlatList
-						horizontal={true}
-						py={THEMES.spacing.xm}
-						backgroundColor={'green'}
-						data={FILTERS_LIST}
-						width={'full'}
-						left={0}
-						contentContainerStyle={{
-							height: '100%',
-							width: '100%',
-						}}
-						renderItem={({ item, index }): any => {
-							return (
-								<Badge
-									px={THEMES.spacing.xm}
-									ml={index !== 0 ? THEMES.spacing.xm : 0}
-									maxHeight={'100'}
-									variant={'solid'}
-									backgroundColor={item.bgCol}
-									borderRadius={'xl'}>
-									{item.title}
-								</Badge>
-							);
-						}}
-					/>
+					{/* badge list */}
+					<BadgesList data={FILTERS_LIST} />
 					<CardsList title='My Exercises' exercisesList={PlaceholderInfo} />
 				</Column>
 			</SafeAreaView>

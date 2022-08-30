@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import ExerciseScreen from '../screens/Exercise';
 import FeedScreen from '../screens/Feed';
 import HomeScreen from '../screens/Home';
 import LoginScreen from '../screens/Login';
@@ -8,6 +9,7 @@ import LoginScreen from '../screens/Login';
 export type StackRoutesProps = {
 	Login: undefined;
 	Feed: undefined;
+	Exercise: undefined;
 };
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +28,15 @@ const StackRoutes: React.FC = () => {
 			<Stack.Screen
 				name='Feed'
 				component={FeedScreen}
+				options={{
+					headerShown: false,
+					statusBarTranslucent: true,
+					statusBarColor: 'transparent',
+				}}
+			/>
+			<Stack.Screen
+				name='Exercise'
+				component={ExerciseScreen}
 				options={{
 					headerShown: false,
 					statusBarTranslucent: true,
