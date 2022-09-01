@@ -1,7 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import ExerciseScreen from '../screens/Exercise';
+import { ExerciseSet } from '../interfaces/ExerciseSet';
+import ExerciseScreen from '../screens/ExerciseScreen';
 import FeedScreen from '../screens/Feed';
 import HomeScreen from '../screens/Home';
 import LoginScreen from '../screens/Login';
@@ -9,7 +10,7 @@ import LoginScreen from '../screens/Login';
 export type StackRoutesProps = {
 	Login: undefined;
 	Feed: undefined;
-	Exercise: undefined;
+	Exercise: ExerciseSet | undefined;
 };
 const Stack = createNativeStackNavigator();
 

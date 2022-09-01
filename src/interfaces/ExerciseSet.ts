@@ -7,4 +7,5 @@ export interface ExerciseSet {
     time: number,
     badges: Array<IBadge>,
     title: string,
+    calories: number
 }

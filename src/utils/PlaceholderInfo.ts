@@ -1,4 +1,5 @@
 import { ExerciseCardProps } from "../components/ExerciseCard";
+import { IBadge } from "../interfaces/Badge";
 
 export const PlaceholderInfo = [
     {
@@ -63,3 +64,8 @@ export const PlaceholderInfo = [
         time: 2061000,
     },
 ] as Array<ExerciseCardProps>
+
+export const PlaceholderBadgesList = [
+    {color: 'red', title: 'Abs'},
+    {color: 'red', title: 'push'}
+] as Array<IBadge>

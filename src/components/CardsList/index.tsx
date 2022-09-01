@@ -46,10 +46,11 @@ const CardsList: React.FC<Props> = ({ title, exercisesList }) => {
 							reps={item.reps}
 							sets={item.sets}
 							mb={'2'}
+							calories={item.calories}
 							key={item.imageSource + Date.now().toString()}
 							time={item.time}
 							title={item.title}
-							onTouchStart={() => navigation.navigate('Exercise')}
+							onTouchEnd={() => navigation.navigate('Exercise', item)}
 						/>
 					);
 				}}
