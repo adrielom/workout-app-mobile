@@ -5,7 +5,8 @@ import {
 } from '@expo-google-fonts/inter';
 import { Icon, IInputProps, Input } from 'native-base';
 import { MagnifyingGlass } from 'phosphor-react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHomeCardList } from '../../contexts/HomeCardsListContext';
 import { THEMES } from '../../utils/Themes';
 
 interface Props extends IInputProps {}
@@ -17,6 +18,12 @@ const Searchbar: React.FC<Props> = () => {
 	});
 
 	if (!fontsLoaded) return null;
+
+	const homeCardListContext = useHomeCardList();
+
+	// useEffect(() => {
+	// 	console.log(homeCardListContext);
+	// }, []);
 
 	return (
 		<Input
@@ -31,6 +38,9 @@ const Searchbar: React.FC<Props> = () => {
 			borderRadius={'8'}
 			borderWidth={'0'}
 			backgroundColor={'#d9d9d945'}
+			onChangeText={(input) => {
+				homeCardListContext.filter(input);
+			}}
 		/>
 	);
 };

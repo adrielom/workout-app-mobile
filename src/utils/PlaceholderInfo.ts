@@ -28,7 +28,7 @@ export const PlaceholderInfo = [
         time: 2061000,
     },
     {
-        title: 'Back is Back',
+        title: 'Squatting time',
         badges: [
             {color: 'red', title: 'Abs'},
             {color: 'red', title: 'push'}
@@ -40,7 +40,7 @@ export const PlaceholderInfo = [
         time: 2061000,
     },
     {
-        title: 'Back is Back',
+        title: 'Bench press',
         badges: [
             {color: 'red', title: 'Abs'},
             {color: 'red', title: 'push'}
@@ -52,7 +52,7 @@ export const PlaceholderInfo = [
         time: 2061000,
     },
     {
-        title: 'Back is Back',
+        title: 'Jumping jacks',
         badges: [
             {color: 'red', title: 'Abs'},
             {color: 'red', title: 'push'}
